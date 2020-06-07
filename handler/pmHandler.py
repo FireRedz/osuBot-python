@@ -10,7 +10,8 @@ async def parseCommand(msg, commandList):
 
 async def pmHandle(client, message, user):
     commands = {
-        'default' : pmCommands.default
+        'default' : pmCommands.default,
+        '!map' : pmCommands.beatmap
     }
 
     currentCommand = await parseCommand(message, commands.keys())
