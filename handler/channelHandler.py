@@ -1,5 +1,5 @@
 import asyncio
-import pmCommands
+import channelCommands
 
 async def parseCommand(msg, commandList):
     for command in commandList:
@@ -8,15 +8,15 @@ async def parseCommand(msg, commandList):
 
     return 'default'
 
-async def pmHandle(client, message, user):
+async def chHandle(client, message, user, channel):
     commands = {
-        'default' : pmCommands.default
+        'default' : channelCommands.default
     }
 
     currentCommand = await parseCommand(message, commands.keys())
     commandRunner = commands[currentCommand]
     # run command
-    tempRun = await commandRunner.run(client, message, user)
+    tempRun = await commandRunner.run(client, message, user, channel)
 
     if tempRun is not None:
         print(tempRun)
