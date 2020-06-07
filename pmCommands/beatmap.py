@@ -5,7 +5,7 @@ async def run(client,message,user):
         tempMsg = message.split()[1]
     except:
         await client.sendPM(user, 'Give me beatmap id >:)')
-        return
+        return f'Not parameter given by {user}'
 
     '''
         todo
@@ -19,6 +19,7 @@ async def run(client,message,user):
     mapData = osuApi.getBeatmap(tempMsg)
     if mapData == None:
         await client.sendPM(user, 'Failed to get beatmap information rip lol')
-        return
+        return f'Failed to completed mirror command for {user}'
 
     await client.sendPM(user, '{} {} [{}]'.format(mapData['artist'], mapData['title'], mapData['version']))
+    return f'Completed Mirror Command for {user}'
