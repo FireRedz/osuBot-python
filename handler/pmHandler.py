@@ -20,4 +20,4 @@ async def pmHandle(client, message, user):
     tempRun = await commandRunner.run(client, message, user)
 
     if tempRun is not None:
-        print(tempRun)
+        print('[DEBUG] '+tempRun)

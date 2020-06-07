@@ -19,4 +19,4 @@ async def chHandle(client, message, user, channel):
     tempRun = await commandRunner.run(client, message, user, channel)
 
     if tempRun is not None:
-        print(tempRun)
+        print('[DEBUG] '+tempRun)
