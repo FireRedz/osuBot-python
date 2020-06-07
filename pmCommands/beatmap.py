@@ -1,12 +1,5 @@
 from utils import osuApi
 
-async def run(client,message,user):
-    try:
-        tempMsg = message.split()[1]
-    except:
-        await client.sendPM(user, 'Give me beatmap id >:)')
-        return f'No parameter given by {user}'
-
     '''
         todo
         
@@ -16,6 +9,15 @@ async def run(client,message,user):
         * finish this function
         * its a mirror command ok
     '''
+    
+async def run(client,message,user):
+    try:
+        tempMsg = message.split()[1]
+    except:
+        await client.sendPM(user, 'Give me beatmap id >:)')
+        return f'No parameter given by {user}'
+
+
     mapData = osuApi.getBeatmap(tempMsg)
     if mapData == None:
         await client.sendPM(user, 'Failed to get beatmap information rip lol')
