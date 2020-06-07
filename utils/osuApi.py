@@ -6,5 +6,10 @@ apikey = config.apiKey
 baseURL = f'https://osu.ppy.sh/api/get_beatmaps?k={apikey}&b=[shit]'
 
 def getBeatmap(mapID):
-    return baseURL.replace('[shit]', mapID)
+    try:
+        tempReq = r.get(baseURL.replace('[shit]', mapID)).json()[0]
+    except:
+        tempReq = None
+    
+    return tempReq
 
