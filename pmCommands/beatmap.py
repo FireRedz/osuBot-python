@@ -5,7 +5,7 @@ async def run(client,message,user):
         tempMsg = message.split()[1]
     except:
         await client.sendPM(user, 'Give me beatmap id >:)')
-        return f'Not parameter given by {user}'
+        return f'No parameter given by {user}'
 
     '''
         todo
