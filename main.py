@@ -8,7 +8,7 @@ class MyBot(osu_irc.Client):
 
     async def onReady(self):
         print('Connected!')
-        await self.joinChannel('#osu')
+        #await self.joinChannel('#osu')
 
     async def onMessage(self, message):
         if message.channel_type == 'pm':
